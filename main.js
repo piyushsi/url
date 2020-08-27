@@ -17,7 +17,7 @@ generate.addEventListener("click", () => {
   if (input.value == "") {
     input.placeholder = "Please input your URL first";
   } 
-  if(!input.value.includes('https://') || !input.value.includes('http://')){
+  if(!input.value.includes('https://') && !input.value.includes('http://')){
     input.value='';
     input.placeholder = "Please input valid URL";
   }

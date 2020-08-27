@@ -15,8 +15,15 @@ const copyToClipboard = (str) => {
 
 generate.addEventListener("click", () => {
   if (input.value == "") {
-    input.placeholder = "Please Enter/Paste your URL first";
-  } else {
+    input.placeholder = "Please input your URL first";
+  } 
+  if(!input.value.includes('https://') || !input.value.includes('http://')){
+    input.value=='';
+    input.placeholder = "Please input valid URL";
+  }
+    
+  
+  else {
     loader.innerHTML = '<div class="lds-ripple"><div></div><div></div></div>';
     const data = { url: input.value };
 
